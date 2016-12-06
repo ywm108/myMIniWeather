@@ -1,7 +1,10 @@
 package tw.com.ywm.miniweather;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +27,7 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import cn.edu.pku.yangwenming.Service.MyService;
 import cn.edu.pku.yangwenming.bean.TodayWeather;
 import cn.edu.pku.yangwenming.util.NetUtil;
 
@@ -34,6 +38,7 @@ import cn.edu.pku.yangwenming.util.NetUtil;
  */
 public class MainActivity extends Activity implements View.OnClickListener{
     private	static	final	int	UPDATE_TODAY_WEATHER	=	1;
+    private MyReceiver receiver=null;
 
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
@@ -64,6 +69,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         climateTv	=	(TextView)	findViewById(R.id.climate);
         windTv	=	(TextView)	findViewById(R.id.wind);
         weatherImg	=	(ImageView)	findViewById(R.id.weather_img);
+
+        //没有数据时的显示格式
         city_name_Tv.setText("N/A");
         cityTv.setText("N/A");
         timeTv.setText("N/A");
@@ -93,8 +100,25 @@ public class MainActivity extends Activity implements View.OnClickListener{
         mCitySelect = (ImageView) findViewById(R.id.title_city_manager);
         mCitySelect.setOnClickListener(this);
         initView();
+//启动服务
+        startService(new Intent(MainActivity.this, MyService.class));
+        //注册广播接收器
+        receiver=new MyReceiver();
+        IntentFilter filter=new IntentFilter();
+        filter.addAction("com.ljq.activity.CountService");
+        MainActivity.this.registerReceiver(receiver,filter);
+
+
     }
-/*
+
+    @Override
+    protected void onDestroy() {
+        //结束服务
+        stopService(new Intent(MainActivity.this, MyService.class));
+        super.onDestroy();
+    }
+
+    /*
 *
 * @param cityCode
  */
@@ -299,4 +323,22 @@ void	updateTodayWeather(TodayWeather	todayWeather){
             }
         }
     }
+    /**
+     * 获取广播数据
+     *
+     * @author jiqinlin
+     *
+     */
+    public class MyReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle=intent.getExtras();
+            //更改最后传入的数据、、、、、
+            String UpdateCityCode= bundle.getString("UpdateCityCode");
+           queryWeatherCode(UpdateCityCode);
+            // Log.d("100",UpdateCityCode);
+        }
+    }
+
+
 }
