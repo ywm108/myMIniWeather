@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Created by ywm108 on 2016/11/29.
+ * Created by ywm108 on 2016/12/6.
  */
-public class viewPagerAdapter extends PagerAdapter {
-     private List<View> views;
-     private Context context;
-     public viewPagerAdapter(List<View> views,Context context){
+public class futureviewPagerAdapter extends PagerAdapter {
+    private List<View> views;
+    private Context context;
+    public futureviewPagerAdapter(List<View> views,Context context){
         this.views=views;
         this.context=context;
     }

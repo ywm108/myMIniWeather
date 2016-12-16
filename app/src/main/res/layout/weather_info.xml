@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/weatherlayout">
   <RelativeLayout
       android:id="@+id/title"
       android:layout_width="fill_parent"
@@ -190,7 +191,7 @@
                     android:layout_marginLeft="5dip"
                     android:layout_toRightOf="@id/weather_img"
                     android:singleLine="true"
-                    android:text="今天	星期三"
+                    android:text="今天星期三"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"	/>
                 <!--	温度范围	-->
@@ -232,6 +233,16 @@
             </RelativeLayout>
         </RelativeLayout>
         <!--	六日天气信息	-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/futureviewpager"
+                android:layout_alignParentBottom="true">
+            </android.support.v4.view.ViewPager>
+        </RelativeLayout>
         <!--	广告等信息	-->
     </LinearLayout>
 </RelativeLayout>
