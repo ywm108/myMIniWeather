@@ -52,13 +52,15 @@ public class SelectCity extends Activity implements View.OnClickListener {
          */
         mEditText.addTextChangedListener(mTextWatcher);
        //对edit赋予初值
-        mEditText.setText("北");
+        //mEditText.setText("北");
+
         mlistView=(ListView)findViewById(R.id.list_view);
         app=(MyApplication)getApplication();
         data=app.getCityList();
         int i=0;
-        stringEditText=mEditText.getText().toString();
-        String stringGetCity=null;
+       // stringEditText=mEditText.getText().toString();
+      //  String stringGetCity=null;
+        /*
         while(i<data.size()){
             //添加判定条件与searchEditText里的内容进行匹配操作
             stringGetCity=data.get(i).getCity().toString();
@@ -68,10 +70,13 @@ public class SelectCity extends Activity implements View.OnClickListener {
             hashMap.put(data.get(i).getCity().toString(),data.get(i).getNumber().toString());
         }
             i++;
-        }
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(SelectCity.this,android.R.layout.simple_list_item_1,city);
-        mlistView.setAdapter(adapter);
+        }
+*/
+     //   ArrayAdapter<String> adapter=new ArrayAdapter<String>(SelectCity.this,android.R.layout.simple_list_item_1,city);
+     //   mlistView.setAdapter(adapter);
+
+        //listview的单击事件
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
           @Override
             public void onItemClick(AdapterView<?>adapterView,View view,int i,long l){
@@ -94,8 +99,24 @@ public class SelectCity extends Activity implements View.OnClickListener {
         }
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-         //   mTextView.setText(charSequence);
+            String stringGetCity=null;
+          //  mEditText.setText(charSequence.toString());
+            stringEditText=mEditText.getText().toString();
             Log.d("myapp","onTextChanged:"+charSequence) ;
+            while(i<data.size()){
+                //添加判定条件与searchEditText里的内容进行匹配操作
+                stringGetCity=data.get(i).getCity().toString();
+
+                if((stringGetCity).substring(0,1).equals(stringEditText)){
+                    city.add(stringGetCity);
+                    cityId.add(data.get(i).getNumber().toString());
+                    hashMap.put(data.get(i).getCity().toString(),data.get(i).getNumber().toString());
+                }
+                i++;
+            }
+            //与mListView关联
+            ArrayAdapter<String> adapter=new ArrayAdapter<String>(SelectCity.this,android.R.layout.simple_list_item_1,city);
+            mlistView.setAdapter(adapter);
         }
         @Override
         public void afterTextChanged(Editable editable) {
@@ -122,7 +143,13 @@ public class SelectCity extends Activity implements View.OnClickListener {
                 String CityNumber=hashMap.get(splitArray[1].toString());
                 //利用广播发送数据
                 Intent intent = new Intent();
-                intent.putExtra("UpdateCitycode",CityNumber);
+                if (CityNumber!=null) {
+                    intent.putExtra("UpdateCitycode", CityNumber);
+                }
+                else
+                {
+                    intent.putExtra("UpdateCitycode", "101010100");
+                }
                 intent.setAction("com.ljq.activity.MyService");
                 sendBroadcast(intent);
                 i.putExtra("cityCode",CityNumber);
@@ -130,7 +157,7 @@ public class SelectCity extends Activity implements View.OnClickListener {
                 setResult(RESULT_OK,i);
                 finish();
 
-                break;
+            break;
             default:
                 break;
         }

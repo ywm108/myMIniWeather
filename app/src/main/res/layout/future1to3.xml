@@ -18,7 +18,7 @@
         android:text="今天星期三"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20sp"	/>
+        android:textSize="15sp"	/>
     <!--	温度范围	-->
     <TextView
         android:id="@+id/temperature1"
@@ -30,7 +30,7 @@
         android:text="-2℃~7℃"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp"	/>
+        android:textSize="15.0sp"	/>
     <TextView
         android:layout_below="@+id/temperature1"
         android:id="@+id/day1"
@@ -39,7 +39,7 @@
         android:text="白天:"
         android:layout_alignParentLeft="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp"/>
+        android:textSize="15.0sp"/>
     <TextView
         android:id="@+id/dayclimate1"
         android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
         android:text="多云转晴"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp" />
+        android:textSize="15.0sp" />
     <TextView
         android:id="@+id/daywind1"
         android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
         android:text="微风"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp"	/>
+        android:textSize="15.0sp"	/>
     <TextView
         android:layout_below="@+id/daywind1"
         android:id="@+id/night1"
@@ -70,7 +70,7 @@
         android:text="夜间:"
         android:layout_alignParentLeft="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp"/>
+        android:textSize="15.0sp"/>
     <TextView
         android:id="@+id/nightclimate1"
         android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
         android:text="多云转晴"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp" />
+        android:textSize="15.0sp" />
     <TextView
         android:id="@+id/nightwind1"
         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
         android:text="微风"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/holo_green_light"
-        android:textSize="20.0sp"	/>
+        android:textSize="15.0sp"	/>
 
 </RelativeLayout>
     <RelativeLayout
@@ -109,7 +109,7 @@
             android:text="今天星期三"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20sp"	/>
+            android:textSize="15sp"	/>
         <!--	温度范围	-->
         <TextView
             android:id="@+id/temperature2"
@@ -121,7 +121,7 @@
             android:text="-2℃~7℃"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
         <TextView
             android:layout_below="@+id/temperature2"
             android:id="@+id/day2"
@@ -130,7 +130,7 @@
             android:text="白天:"
             android:layout_alignParentLeft="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"/>
+            android:textSize="15.0sp"/>
         <TextView
             android:id="@+id/dayclimate2"
             android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
             android:text="多云转晴"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp" />
+            android:textSize="15.0sp" />
         <TextView
             android:id="@+id/daywind2"
             android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
             android:text="微风"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
         <TextView
             android:layout_below="@+id/daywind2"
             android:id="@+id/night2"
@@ -161,7 +161,7 @@
             android:text="夜间:"
             android:layout_alignParentLeft="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"/>
+            android:textSize="15.0sp"/>
         <TextView
             android:id="@+id/nightclimate2"
             android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
             android:text="多云转晴"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp" />
+            android:textSize="15.0sp" />
         <TextView
             android:id="@+id/nightwind2"
             android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
             android:text="微风"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
 
     </RelativeLayout>
     <RelativeLayout
@@ -200,7 +200,7 @@
             android:text="今天星期三"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20sp"	/>
+            android:textSize="15sp"	/>
         <!--	温度范围	-->
         <TextView
             android:id="@+id/temperature3"
@@ -212,7 +212,7 @@
             android:text="-2℃~7℃"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
         <TextView
             android:layout_below="@+id/temperature3"
             android:id="@+id/day3"
@@ -221,7 +221,7 @@
             android:text="白天:"
             android:layout_alignParentLeft="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"/>
+            android:textSize="15.0sp"/>
         <TextView
             android:id="@+id/dayclimate3"
             android:layout_width="wrap_content"
@@ -232,7 +232,7 @@
             android:text="多云转晴"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp" />
+            android:textSize="15.0sp" />
         <TextView
             android:id="@+id/daywind3"
             android:layout_width="wrap_content"
@@ -243,7 +243,7 @@
             android:text="微风"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
         <TextView
             android:layout_below="@+id/daywind3"
             android:id="@+id/night3"
@@ -252,7 +252,7 @@
             android:text="夜间:"
             android:layout_alignParentLeft="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"/>
+            android:textSize="15.0sp"/>
         <TextView
             android:id="@+id/nightclimate3"
             android:layout_width="wrap_content"
@@ -263,7 +263,7 @@
             android:text="多云转晴"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp" />
+            android:textSize="15.0sp" />
         <TextView
             android:id="@+id/nightwind3"
             android:layout_width="wrap_content"
@@ -274,7 +274,7 @@
             android:text="微风"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/holo_green_light"
-            android:textSize="20.0sp"	/>
+            android:textSize="15.0sp"	/>
 
     </RelativeLayout>
 </LinearLayout>
