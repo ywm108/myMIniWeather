@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +40,8 @@ public class Guide extends Activity implements ViewPager.OnPageChangeListener {
                 finish();
             }
         });
+        UmengUpdateAgent.update(this);
+
     }
     private void initDots(){
         dots = new ImageView[views.size()];
@@ -77,4 +82,13 @@ public class Guide extends Activity implements ViewPager.OnPageChangeListener {
     public void onPageScrollStateChanged(int state) {
 
     }
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
 }
